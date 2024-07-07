@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}ToDo List{% endblock %}
+
+{% block content %}
+    <div class="mt-4">
+        <h1 class="display-4">ToDo List ({{ type }})</h1>
+        <ul class="list-group mt-4">
+            {% for todo in todos %}
+                <li class="list-group-item">
+                    <strong>ID:</strong> {{ todo.id }}<br>
+                    <strong>Title:</strong> {{ todo.title }}<br>
+                    {% if todo.user_id %}
+                        <strong>User ID:</strong> {{ todo.user_id }}<br>
+                    {% endif %}
+                    {% if todo.resolved %}
+                        <strong>Status:</strong> Resolved<br>
+                    {% else %}
+                        <strong>Status:</strong> Unresolved<br>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'home' %}" class="btn btn-primary mt-4">Back to Options</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}ToDo Options{% endblock %}
+
+{% block content %}
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">ToDo Options</h1>
+        <ul class="list-group mt-4">
+            <li class="list-group-item"><a href="{% url 'todos-ids' %}">Lista de todos los pendientes (solo IDs)</a></li>
+            <li class="list-group-item"><a href="{% url 'todos-ids-titles' %}">Lista de todos los pendientes (IDs y Titles)</a></li>
+            <li class="list-group-item"><a href="{% url 'todos-unresolved' %}">Lista de todos los pendientes sin resolver (ID y Title)</a></li>
+            <li class="list-group-item"><a href="{% url 'todos-resolved' %}">Lista de todos los pendientes resueltos (ID y Title)</a></li>
+            <li class="list-group-item"><a href="{% url 'todos-ids-userids' %}">Lista de todos los pendientes (IDs y userID)</a></li>
+            <li class="list-group-item"><a href="{% url 'todos-resolved-userids' %}">Lista de todos los pendientes resueltos (ID y userID)</a></li>
+            <li class="list-group-item"><a href="{% url 'todos-unresolved-userids' %}">Lista de todos los pendientes sin resolver (ID y userID)</a></li>
+        </ul>
+    </div>
+{% endblock %}
